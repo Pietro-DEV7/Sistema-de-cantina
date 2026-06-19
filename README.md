@@ -1,61 +1,102 @@
-completo
-## Cantina SENAI
+# Cantina SENAI
+
 ## Sobre o Projeto
 
-O Cantina SENAI é uma aplicação web desenvolvida com HTML, CSS e JavaScript puro, criada para tornar o processo de compra em uma cantina escolar mais rápido, organizado e prático. A proposta do sistema é permitir que os alunos realizem pedidos de forma digital, evitando filas e facilitando o controle de saldo e compras.
+O Cantina SENAI é uma aplicação web desenvolvida com HTML, CSS e JavaScript, criada com o objetivo de simular o funcionamento de uma cantina escolar digital. O sistema busca tornar o processo de compra de lanches mais prático e organizado, permitindo que os usuários realizem pedidos, acompanhem seu saldo e gerenciem suas compras de forma simples e intuitiva.
 
-O usuário pode acessar o sistema por meio de um login, consultar seu saldo disponível, adicionar créditos à conta, escolher produtos do cardápio e finalizar pedidos em poucos cliques. Após a compra, o sistema simula o preparo do lanche e envia uma notificação informando que o pedido está pronto para retirada.
+O projeto foi desenvolvido utilizando apenas tecnologias nativas da web, sem frameworks ou bibliotecas externas, demonstrando como é possível construir uma aplicação funcional e interativa com uma estrutura leve e de fácil compreensão.
 
-Além de oferecer uma experiência simples e intuitiva, o projeto foi desenvolvido sem o uso de frameworks ou bibliotecas externas, demonstrando como é possível criar uma aplicação funcional utilizando apenas os recursos nativos da web.
+---
 
- Funcionalidades:
- Login de usuários;
- Dashboard com informações do saldo disponível;
- Adição de créditos na conta;
- Cardápio digital com produtos disponíveis para compra;
- Carrinho de compras com atualização automática do valor total;
- Verificação de saldo antes da finalização do pedido;
- Redirecionamento automático para recarga em caso de saldo insuficiente;
- Notificação simulando o preparo do lanche;
- Interface simples, organizada e de fácil navegação.
+## Objetivo
 
-Tecnologias Utilizadas:
-HTML5 — Estrutura das páginas;
-CSS3 — Estilização e responsividade;
-JavaScript — Regras de negócio, manipulação do DOM e controle das funcionalidades.
+O principal objetivo deste projeto é aplicar conceitos fundamentais de desenvolvimento web, como estruturação de páginas, estilização de interfaces, manipulação do DOM e implementação de regras de negócio utilizando JavaScript.
 
-Estrutura do Projeto:
+Além disso, o sistema apresenta uma solução simples para digitalizar processos comuns de uma cantina escolar, proporcionando uma melhor experiência para os usuários.
+
+---
+
+## Funcionalidades
+
+O sistema oferece as seguintes funcionalidades:
+
+* Autenticação de usuários por meio de login;
+* Visualização do saldo disponível;
+* Adição de créditos para futuras compras;
+* Consulta ao cardápio digital;
+* Seleção de produtos e gerenciamento do carrinho de compras;
+* Cálculo automático do valor total do pedido;
+* Verificação de saldo antes da finalização da compra;
+* Notificações informando o andamento do pedido;
+* Simulação do preparo do lanche e retirada na cozinha.
+
+---
+
+## Fluxo de Utilização
+
+O funcionamento da aplicação segue um fluxo simples e intuitivo:
+
+1. O usuário realiza o login no sistema.
+2. Após a autenticação, é direcionado para o Dashboard.
+3. No Dashboard, pode consultar seu saldo e escolher uma ação.
+4. Caso necessário, adiciona créditos à conta.
+5. Acessa o cardápio e seleciona os produtos desejados.
+6. Confirma o pedido no carrinho de compras.
+7. O sistema verifica se existe saldo suficiente.
+8. Se o pagamento for aprovado, o pedido é enviado para a cozinha.
+9. Após alguns segundos, uma notificação informa que o lanche está pronto para retirada.
+
+---
+
+## Estrutura do Projeto
+
+```bash
 cantina-senai/
 │
 ├── index.html
 ├── style.css
 ├── script.js
 └── README.md
+```
 
-Como o Sistema Funciona:
+### index.html
 
-O fluxo de utilização é simples:
+Responsável pela estrutura da aplicação. Nele estão definidas as telas de login, dashboard, adição de créditos e cardápio, além dos elementos que recebem os conteúdos gerados dinamicamente pelo JavaScript.
 
-O usuário realiza o login.
-É direcionado para o Dashboard.
-Escolhe entre adicionar créditos ou acessar o cardápio.
-Seleciona os produtos desejados.
-Confirma o pedido.
-O sistema verifica se há saldo suficiente.
-Se aprovado, o valor é descontado e o pedido é enviado para a cozinha.
-Após alguns segundos, uma notificação informa que o lanche está pronto para retirada.
+### style.css
 
-Destaques Técnicos:
-O cardápio é gerado dinamicamente pelo JavaScript, sem a necessidade de criar cada item manualmente no HTML.
-O cálculo do carrinho é realizado automaticamente conforme os produtos são adicionados ou removidos.
-O sistema utiliza manipulação de classes CSS para alternar entre as telas da aplicação.
-Em caso de saldo insuficiente, o usuário recebe uma mensagem de aviso e é direcionado automaticamente para a tela de recarga.
-A funcionalidade de notificação simula um ambiente real de cantina, informando quando o pedido está pronto.
+Arquivo responsável pela aparência visual do sistema. Utiliza variáveis CSS para padronização das cores, Flexbox para organização dos elementos e animações que tornam a navegação mais agradável para o usuário.
 
-Objetivo do Projeto:
+### script.js
 
-Este projeto foi desenvolvido com o objetivo de colocar em prática conhecimentos de desenvolvimento web, trabalhando conceitos como manipulação do DOM, eventos, lógica de programação, responsividade e experiência do usuário. Além disso, apresenta uma solução simples para digitalizar o processo de pedidos em cantinas escolares.
+Contém toda a lógica da aplicação, incluindo autenticação, controle de saldo, gerenciamento do carrinho, processamento de pedidos, troca de telas e exibição de notificações.
 
-👨‍💻 Desenvolvido por
+---
 
-Projeto acadêmico desenvolvido no SENAI como atividade prática para aplicação dos conhecimentos adquiridos em desenvolvimento web utilizando HTML, CSS e JavaScript. 🚀
+## Aspectos Técnicos
+
+Um dos principais diferenciais do projeto é a geração dinâmica do cardápio. Os produtos não são inseridos diretamente no HTML; eles são criados em tempo de execução por meio do JavaScript, facilitando futuras alterações e expansões do sistema.
+
+Outro ponto importante é o gerenciamento de estado da aplicação, realizado através de variáveis responsáveis por armazenar informações como saldo do usuário e itens presentes no carrinho.
+
+O cálculo do valor total da compra é realizado automaticamente utilizando métodos nativos do JavaScript, garantindo maior eficiência e organização do código.
+
+Além disso, quando o usuário tenta finalizar uma compra sem saldo suficiente, o sistema exibe uma mensagem de aviso e o direciona automaticamente para a tela de recarga, melhorando a experiência de uso.
+
+Para tornar a aplicação mais próxima de uma situação real, foi implementada uma simulação de preparo do pedido. Após a confirmação da compra, o sistema aguarda alguns segundos antes de exibir uma notificação informando que o lanche está pronto para retirada.
+
+---
+
+## Tecnologias Utilizadas
+
+* HTML5
+* CSS3
+* JavaScript (ES6)
+
+---
+
+## Considerações Finais
+
+O Cantina SENAI foi desenvolvido como um projeto acadêmico com o propósito de consolidar conhecimentos em desenvolvimento web. A aplicação demonstra a utilização prática de conceitos fundamentais da programação front-end, além de apresentar uma solução funcional para o gerenciamento simplificado de pedidos em uma cantina escolar.
+
+O projeto também serve como base para futuras melhorias, como integração com banco de dados, autenticação real de usuários, histórico de pedidos e painel administrativo para gerenciamento de produtos e vendas.
