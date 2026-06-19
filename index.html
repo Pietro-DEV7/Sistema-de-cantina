@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Cantina SENAI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <header>Cantina SENAI</header>
+    
+    <div id="kitchen-notification" class="notification">🔔 Seu pedido está pronto na cozinha!</div>
+
+    <div id="view-login" class="view active">
+      <h2>Bem-vindo!</h2>
+      <p>Acesse sua conta para gerenciar créditos e pedir seu lanche.</p>
+      
+      <div class="input-group">
+        <label>NIF / Matrícula</label>
+        <input type="text" id="login-nif" placeholder="Digite seu NIF" value="123456">
+      </div>
+      <div class="input-group">
+        <label>Senha</label>
+        <input type="password" id="login-password" placeholder="••••••••" value="123">
+      </div>
+      
+      <button class="btn btn-purple" onclick="handleLogin()">Entrar / Cadastrar</button>
+      <div id="login-error" class="error-msg">⚠️ Erro na autenticação. Verifique os dados.</div>
+    </div>
+
+    <div id="view-dashboard" class="view">
+      <h2>Olá, Estudante!</h2>
+      <p>O que você deseja fazer hoje?</p>
+      
+      <div class="balance-card">
+        <div>Seu Saldo Atual</div>
+        <div class="balance-val">R$ <span id="user-balance">0,00</span></div>
+      </div>
+      
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-top: auto;">
+        <button class="btn btn-teal" onclick="navigateTo('view-credits')">➕ Adicionar Crédito</button>
+        <button class="btn btn-amber" onclick="navigateTo('view-menu')">🍔 Comprar Lanche</button>
+        <button class="btn btn-gray" onclick="navigateTo('view-login')" style="margin-top: 20px;">Sair</button>
+      </div>
+    </div>
+
+    <div id="view-credits" class="view">
+      <h2>Adicionar Crédito</h2>
+      <p>Escolha o valor e a forma de pagamento desejada.</p>
+      
+      <div class="input-group">
+        <label>Valor da Recarga (R$)</label>
+        <input type="number" id="credit-amount" placeholder="0,00" min="1" step="0.50">
+      </div>
+      
+      <div class="input-group">
+        <label>Forma de Pagamento</label>
+        <select id="payment-method">
+          <option value="pix">PIX (Aprovação Imediata)</option>
+          <option value="card">Cartão de Crédito</option>
+        </select>
+      </div>
+      
+      <div style="display: flex; gap: 10px; margin-top: auto;">
+        <button class="btn btn-gray" style="flex:1" onclick="navigateTo('view-dashboard')">Voltar</button>
+        <button class="btn btn-teal" style="flex:2" onclick="handlePayment()">Processar Pagamento</button>
+      </div>
+    </div>
+
+    <div id="view-menu" class="view">
+      <h2>Cardápio Digital</h2>
+      <p>Selecione os itens para adicionar ao carrinho.</p>
+      
+      <div class="menu-grid" id="menu-items-container">
+        </div>
+      
+      <div class="cart-summary">
+        <span>Total do Carrinho:</span>
+        <strong id="cart-total">R$ 0,00</strong>
+      </div>
+      
+      <div id="menu-error" class="error-msg" style="margin-bottom: 10px;">⚠️ Saldo insuficiente! Adicione créditos primeiro.</div>
+      
+      <div style="display: flex; gap: 10px; margin-top: auto; padding-top: 15px;">
+        <button class="btn btn-gray" style="flex:1" onclick="navigateTo('view-dashboard')">Voltar</button>
+        <button class="btn btn-amber" style="flex:2" onclick="handleCheckout()">Confirmar Pedido</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

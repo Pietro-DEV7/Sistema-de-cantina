@@ -1,0 +1,209 @@
+:root {
+  --purple-50: #EEEDFE; --purple-200: #AFA9EC; --purple-600: #534AB7; --purple-800: #3C3489;
+  --teal-50: #E1F5EE; --teal-200: #5DCAA5; --teal-600: #0F6E56;
+  --amber-50: #FAEEDA; --amber-200: #EF9F27; --amber-600: #854F0B;
+  --coral-50: #FAECE7; --coral-600: #993C1D;
+  --green-50: #EAF3DE; --green-200: #97C459; --green-600: #3B6D11;
+  --gray-50: #F1EFE8; --gray-100: #D3D1C7; --gray-200: #B4B2A9; --gray-800: #444441;
+  --bg: #ffffff; --bg2: #f5f4ef; --text: #1a1a18; --text2: #5f5e5a;
+  --border: rgba(0,0,0,0.12); --radius: 12px;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+}
+
+body { 
+  background: var(--bg2); 
+  color: var(--text); 
+  padding: 20px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
+}
+
+.app-container { 
+  background: var(--bg); 
+  width: 100%; 
+  max-width: 480px; 
+  min-height: 600px; 
+  border-radius: var(--radius); 
+  border: 1px solid var(--border); 
+  box-shadow: 0 8px 32px rgba(0,0,0,0.05); 
+  display: flex; 
+  flex-direction: column; 
+  overflow: hidden; 
+  position: relative; 
+}
+
+header { 
+  background: var(--purple-600); 
+  color: white; 
+  padding: 20px; 
+  text-align: center; 
+  font-size: 18px; 
+  font-weight: 600; 
+  letter-spacing: -0.5px; 
+}
+
+.view { 
+  display: none; 
+  padding: 24px; 
+  flex-direction: column; 
+  flex: 1; 
+}
+
+.view.active { 
+  display: flex; 
+}
+
+h2 { 
+  font-size: 20px; 
+  margin-bottom: 8px; 
+  color: var(--gray-800); 
+  font-weight: 600; 
+}
+
+p { 
+  font-size: 14px; 
+  color: var(--text2); 
+  margin-bottom: 20px; 
+}
+
+.input-group { 
+  margin-bottom: 16px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 6px; 
+}
+
+label { 
+  font-size: 12px; 
+  font-weight: 600; 
+  color: var(--text2); 
+  text-transform: uppercase; 
+}
+
+input, select { 
+  padding: 12px; 
+  border: 1.5px solid var(--gray-100); 
+  border-radius: 8px; 
+  font-size: 14px; 
+  outline: none; 
+  transition: 0.2s; 
+}
+
+input:focus { 
+  border-color: var(--purple-200); 
+}
+
+.btn { 
+  padding: 12px 20px; 
+  border: none; 
+  border-radius: 8px; 
+  font-size: 14px; 
+  font-weight: 600; 
+  cursor: pointer; 
+  transition: transform 0.1s, opacity 0.2s; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+}
+
+.btn:active { 
+  transform: scale(0.98); 
+}
+
+.btn-purple { background: var(--purple-600); color: white; }
+.btn-teal { background: var(--teal-600); color: white; }
+.btn-amber { background: var(--amber-600); color: white; }
+.btn-gray { background: var(--gray-100); color: var(--gray-800); }
+
+.balance-card { 
+  background: var(--teal-50); 
+  border: 1.5px solid var(--teal-200); 
+  padding: 20px; 
+  border-radius: var(--radius); 
+  color: var(--teal-800); 
+  margin-bottom: 20px; 
+  text-align: center; 
+}
+
+.balance-val { 
+  font-size: 32px; 
+  font-weight: 700; 
+  margin-top: 5px; 
+}
+
+.menu-grid { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+  margin-top: 10px; 
+}
+
+.snack-item { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 12px; 
+  border: 1px solid var(--border); 
+  border-radius: 8px; 
+  background: var(--bg); 
+}
+
+.snack-info h4 { 
+  font-size: 15px; 
+  color: var(--gray-800); 
+}
+
+.snack-info span { 
+  font-size: 13px; 
+  color: var(--amber-600); 
+  font-weight: 600; 
+}
+
+.cart-summary { 
+  background: var(--amber-50); 
+  border: 1px solid var(--amber-200); 
+  padding: 14px; 
+  border-radius: 8px; 
+  margin-top: 16px; 
+  font-size: 14px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.error-msg { 
+  color: var(--coral-600); 
+  font-size: 13px; 
+  margin-top: 8px; 
+  display: none; 
+  font-weight: 500; 
+}
+
+.notification { 
+  position: absolute; 
+  top: -100px; 
+  left: 20px; 
+  right: 20px; 
+  background: var(--green-600); 
+  color: white; 
+  padding: 16px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+  font-size: 14px; 
+  text-align: center; 
+  z-index: 10; 
+  transition: top 0.4s ease; 
+  font-weight: 500; 
+}
+
+.notification.show { 
+  top: 20px; 
+}
