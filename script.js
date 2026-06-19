@@ -1,4 +1,3 @@
-// --- ESTADO DA APLICAÇÃO ---
 let balance = 0.00;
 let cart = [];
 
@@ -10,7 +9,6 @@ const menuProducts = [
   { id: 5, name: "Refrigerante Lata", price: 5.50 }
 ];
 
-// --- NAVEGAÇÃO ---
 function navigateTo(viewId) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById(viewId).classList.add('active');
@@ -19,7 +17,6 @@ function navigateTo(viewId) {
   document.querySelectorAll('.error-msg').forEach(err => err.style.display = 'none');
 }
 
-// --- ATUALIZAÇÕES DE INTERFACE ---
 function updateBalanceDisplay() {
   document.getElementById('user-balance').innerText = balance.toFixed(2).replace('.', ',');
 }
@@ -74,9 +71,6 @@ function updateCartTotal() {
   return total;
 }
 
-// --- REGRAS DE NEGÓCIO ---
-
-// Validação simples de Login
 function handleLogin() {
   const nif = document.getElementById('login-nif').value;
   const pass = document.getElementById('login-password').value;
@@ -101,7 +95,6 @@ function handlePayment() {
   }
 }
 
-// Finalização da Compra
 function handleCheckout() {
   const total = updateCartTotal();
   
@@ -121,7 +114,6 @@ function handleCheckout() {
   }
 }
 
-// Simulação da Cozinha (Notificação ativa após 5 segundos)
 function simulateKitchenResponse() {
   setTimeout(() => {
     const notification = document.getElementById('kitchen-notification');
@@ -134,7 +126,6 @@ function simulateKitchenResponse() {
   }, 5000);
 }
 
-// Inicializa o cardápio assim que o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
   renderMenu();
 });
